@@ -1,6 +1,6 @@
 const timer = document.getElementById("timer");
 const changeTimer = function () {
-    timer.textContent -= 1;
+    timer.textContent--;
     if (Number(timer.textContent) < 1) {
         clearInterval(idTimer);
         alert("Вы победили в конкурсе!");
