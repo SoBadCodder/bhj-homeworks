@@ -3,8 +3,9 @@ let counter = document.getElementById("clicker__counter");
 let speed = document.getElementById("clicker__speed");
 let prevTime = new Date ();
 let curTime;
-
+let idTimer = setInterval(function (){}, 0);
 img.onclick = () => {
+    clearInterval(idTimer);
     curTime = new Date();
     console.log(curTime - prevTime);
     speed.textContent = (1000/(curTime-prevTime));
@@ -17,4 +18,7 @@ img.onclick = () => {
         img.width += 20;
         img.height += 20;
     }
+    idTimer = setInterval(function () {
+        speed.textContent = 0;
+    }, 1000);
 };
