@@ -15,24 +15,21 @@ navSlider.forEach(function (elem) {
 });
 
 function slideRight() {
-    if(currentItem.nextElementSibling === null){
-        currentItem.classList.remove('slider__item_active');
+    currentItem.classList.remove('slider__item_active');
+    if (currentItem.nextElementSibling === null) {
         currentItem = document.querySelector('.slider__item');
-        currentItem.classList.add('slider__item_active');
-    } else{
-        currentItem.classList.remove('slider__item_active');
+    } else {
         currentItem = currentItem.nextElementSibling;
-        currentItem.classList.add('slider__item_active');
     }
+    currentItem.classList.add('slider__item_active');
 }
+
 function slideLeft() {
-    if(currentItem.previousElementSibling === null){
-        currentItem.classList.remove('slider__item_active');
+    currentItem.classList.remove('slider__item_active');
+    if (currentItem.previousElementSibling === null) {
         currentItem = lastItem;
-        currentItem.classList.add('slider__item_active');
-    } else{
-        currentItem.classList.remove('slider__item_active');
+    } else {
         currentItem = currentItem.previousElementSibling;
-        currentItem.classList.add('slider__item_active');
     }
+    currentItem.classList.add('slider__item_active');
 }
