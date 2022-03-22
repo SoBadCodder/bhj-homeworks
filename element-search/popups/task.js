@@ -6,6 +6,7 @@ mainModal.classList.add('modal_active');
 
 closeModal.forEach( function(elem) {
     elem.onclick = function (event) {
+        console.log(elem);
         if(mainModal.classList.contains('modal_active')){
             mainModal.classList.remove('modal_active');
         }
@@ -13,7 +14,7 @@ closeModal.forEach( function(elem) {
             succesModal.classList.remove('modal_active');
             return false;
         }
-        if(event.explicitOriginalTarget.classList.contains('btn')){
+        if(elem.classList.contains('btn')){
             succesModal.classList.add('modal_active');
             return false;
         }
