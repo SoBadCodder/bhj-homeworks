@@ -1,17 +1,16 @@
 let img = document.getElementById("cookie");
 let counter = document.getElementById("clicker__counter");
 let speed = document.getElementById("clicker__speed");
-let prevTime = new Date ();
+let prevTime = new Date();
 let curTime;
-let idTimer = setInterval(function (){}, 0);
 img.onclick = () => {
     clearInterval(idTimer);
     curTime = new Date();
     console.log(curTime - prevTime);
-    speed.textContent = (1000/(curTime-prevTime));
+    speed.textContent = (1000 / (curTime - prevTime));
     prevTime = curTime;
     counter.textContent++;
-    if(counter.textContent % 2 == 0){
+    if (counter.textContent % 2 == 0) {
         img.width -= 20;
         img.height -= 20;
     } else {
